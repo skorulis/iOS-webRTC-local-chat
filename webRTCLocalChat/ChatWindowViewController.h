@@ -2,9 +2,10 @@
 //  Copyright (c) 2015 com.skorulis. All rights reserved.
 
 @import UIKit;
+#import "RTCService.h"
 
 @interface ChatWindowViewController : UIViewController
 
-- (instancetype) initWithName:(NSString*)name;
+- (instancetype) initWithService:(RTCService*)service name:(NSString*)name;
 
 @end

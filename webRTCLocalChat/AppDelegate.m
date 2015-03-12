@@ -4,7 +4,9 @@
 #import "AppDelegate.h"
 #import "ChatWindowViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () {
+    RTCService* _rtcService;
+}
 
 @end
 
@@ -12,9 +14,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    _rtcService = [[RTCService alloc] init];
     
-    ChatWindowViewController* chat1 = [[ChatWindowViewController alloc] initWithName:@"chat1"];
-    ChatWindowViewController* chat2 = [[ChatWindowViewController alloc] initWithName:@"chat2"];
+    ChatWindowViewController* chat1 = [[ChatWindowViewController alloc] initWithService:_rtcService name:@"chat1"];
+    ChatWindowViewController* chat2 = [[ChatWindowViewController alloc] initWithService:_rtcService name:@"chat2"];
     
     UITabBarController* tabController = [[UITabBarController alloc] init];
     tabController.viewControllers = @[chat1,chat2];

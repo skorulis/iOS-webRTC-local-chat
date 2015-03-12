@@ -5,12 +5,16 @@
 #import <Masonry/Masonry.h>
 #import <FontAwesomeKit/FontAwesomeKit.h>
 #import "UIViewController+KeyboardAnimation.h"
+#import <RTCPeerConnectionDelegate.h>
 
-@interface ChatWindowViewController () {
+
+@interface ChatWindowViewController () <RTCPeerConnectionDelegate> {
     NSString* _windowName;
     UILabel* _titleLabel;
     UITextView* _chatText;
     UIButton* _sendButton;
+    RTCService* _service;
+    RTCPeerConnection* _peerConnection;
 }
 
 @property (nonatomic, readonly) MASConstraint* entryBottomConstraint;
@@ -20,10 +24,12 @@
 
 @implementation ChatWindowViewController
 
-- (instancetype) initWithName:(NSString*)name {
+- (instancetype) initWithService:(RTCService*)service name:(NSString*)name {
     self = [super init];
     self.title = name;
     _windowName = name;
+    _service = service;
+    _peerConnection = [_service getConnection:self];
     return self;
 }
 
@@ -58,8 +64,8 @@
     [super viewWillAppear:animated];
     __weak typeof(self) weakSelf = self;
     [self an_subscribeKeyboardWithAnimations:^(CGRect keyboardRect, NSTimeInterval duration, BOOL isShowing) {
-        CGFloat showingOffset = -CGRectGetHeight(keyboardRect) + weakSelf.bottomLayoutGuide.length;
-        weakSelf.entryBottomConstraint.offset = isShowing ? showingOffset  : 0;
+        CGFloat showingOffset = -CGRectGetHeight(keyboardRect);
+        weakSelf.entryBottomConstraint.offset = isShowing ? showingOffset  : -50;
         [weakSelf.view layoutIfNeeded];
     } completion:nil];
 }
@@ -85,7 +91,7 @@
         make.left.equalTo(self.view);
         make.right.equalTo(_sendButton.mas_left);
         make.height.equalTo(@80);
-        _entryBottomConstraint = make.bottom.equalTo(((UIView*)self.bottomLayoutGuide).mas_top);
+        _entryBottomConstraint = make.bottom.equalTo(self.view).with.offset(-50);
     }];
     
     [_sendButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -105,6 +111,48 @@
     _chatText.text = [NSString stringWithFormat:@"%@%@:%@\n",_chatText.text,self.title,toSend];
     _entryText.text = nil;
     
+}
+
+#pragma mark RTCPeerConnectionDelegate
+
+// Triggered when the SignalingState changed.
+- (void)peerConnection:(RTCPeerConnection *)peerConnection signalingStateChanged:(RTCSignalingState)stateChanged {
+    NSLog(@"State changed %u",stateChanged);
+}
+
+// Triggered when media is received on a new stream from remote peer.
+- (void)peerConnection:(RTCPeerConnection *)peerConnection addedStream:(RTCMediaStream *)stream {
+    NSLog(@"Added stream %@",stream);
+}
+
+// Triggered when a remote peer close a stream.
+- (void)peerConnection:(RTCPeerConnection *)peerConnection removedStream:(RTCMediaStream *)stream {
+    NSLog(@"Removed stream %@",stream);
+}
+
+// Triggered when renegotiation is needed, for example the ICE has restarted.
+- (void)peerConnectionOnRenegotiationNeeded:(RTCPeerConnection *)peerConnection {
+    NSLog(@"Reneg needed %@",peerConnection);
+}
+
+// Called any time the ICEConnectionState changes.
+- (void)peerConnection:(RTCPeerConnection *)peerConnection iceConnectionChanged:(RTCICEConnectionState)newState {
+    NSLog(@"Ice connection changed %u",newState);
+}
+
+// Called any time the ICEGatheringState changes.
+- (void)peerConnection:(RTCPeerConnection *)peerConnection iceGatheringChanged:(RTCICEGatheringState)newState {
+    NSLog(@"ice gathering changed %u",newState);
+}
+
+// New Ice candidate have been found.
+- (void)peerConnection:(RTCPeerConnection *)peerConnection gotICECandidate:(RTCICECandidate *)candidate {
+    NSLog(@"Got ice %@",candidate);
+}
+
+// New data channel has been opened.
+- (void)peerConnection:(RTCPeerConnection*)peerConnection didOpenDataChannel:(RTCDataChannel*)dataChannel {
+    NSLog(@"Did open channel %@",dataChannel);
 }
 
 @end
