@@ -3,10 +3,8 @@
 
 @import UIKit;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface ChatWindowViewController : UIViewController
 
-@property (strong, nonatomic) UIWindow *window;
-
+- (instancetype) initWithName:(NSString*)name;
 
 @end
-
