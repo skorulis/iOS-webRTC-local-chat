@@ -110,7 +110,7 @@
     [self appendText:toSend name:self.title];
     _entryText.text = nil;
     NSData* data = [toSend dataUsingEncoding:NSUTF8StringEncoding];
-    RTCDataBuffer* buffer = [[RTCDataBuffer alloc] initWithData:data isBinary:true];
+    RTCDataBuffer* buffer = [[RTCDataBuffer alloc] initWithData:data isBinary:false];
     [_peerConnection.dataChannel sendData:buffer];
 }
 
@@ -128,7 +128,7 @@
 
 // Called when the data channel state has changed.
 - (void)channelDidChangeState:(RTCDataChannel*)channel {
-    NSLog(@"state change %@",channel);
+    NSLog(@"state change %@ %u",channel,channel.state);
     dispatch_async(dispatch_get_main_queue(), ^{
         if(channel.state == kRTCDataChannelStateOpen) {
             [self appendText:@"connected" name:@"system"];

@@ -3,6 +3,7 @@
 
 #import "RTCConnectionWrapper.h"
 #import <RTCSessionDescription.h>
+#import <RTCICECandidate.h>
 
 @interface RTCConnectionWrapper () {
     BOOL _didInitiate;
@@ -20,7 +21,7 @@
     _otherConnection = other;
     other.otherConnection = self;
     RTCDataChannelInit* config = [[RTCDataChannelInit alloc] init];
-    config.isOrdered = true;
+    config.isOrdered = false;
     _dataChannel = [_peerConnection createDataChannelWithLabel:@"sender" config:config];
     [_delegate rtcConnection:self didCreateDataChannel:_dataChannel];
     [_peerConnection createOfferWithDelegate:self constraints:nil];
@@ -61,7 +62,9 @@
 // New Ice candidate have been found.
 - (void)peerConnection:(RTCPeerConnection *)peerConnection gotICECandidate:(RTCICECandidate *)candidate {
     NSLog(@"Got ice %@",candidate);
-    [_otherConnection.peerConnection addICECandidate:candidate];
+    if(candidate) {
+        [_otherConnection.peerConnection addICECandidate:candidate];
+    }
 }
 
 // New data channel has been opened.
@@ -75,7 +78,7 @@
 
 // Called when creating a session.
 - (void)peerConnection:(RTCPeerConnection *)peerConnection didCreateSessionDescription:(RTCSessionDescription *)sdp error:(NSError *)error {
-    NSLog(@"Created session");
+    NSLog(@"Created session description for %@",self);
     [_peerConnection setLocalDescriptionWithDelegate:self sessionDescription:sdp];
     [_otherConnection.peerConnection setRemoteDescriptionWithDelegate:_otherConnection sessionDescription:sdp];
     if(_didInitiate) {
@@ -85,7 +88,9 @@
 
 // Called when setting a local or remote description.
 - (void)peerConnection:(RTCPeerConnection *)peerConnection didSetSessionDescriptionWithError:(NSError *)error {
-    NSLog(@"set session error %@",error);
+    if(error) {
+        NSLog(@"Error settings session description %@",error);
+    }
 }
 
 
