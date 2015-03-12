@@ -15,6 +15,7 @@
 		FABB4C691AB125B200E5A3EB /* webRTCLocalChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB4C681AB125B200E5A3EB /* webRTCLocalChatTests.m */; };
 		FABB4C741AB1278D00E5A3EB /* ChatWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB4C731AB1278D00E5A3EB /* ChatWindowViewController.m */; };
 		FABB4C7A1AB13F4D00E5A3EB /* RTCService.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB4C791AB13F4D00E5A3EB /* RTCService.m */; };
+		FABB4C7D1AB149D800E5A3EB /* RTCConnectionWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB4C7C1AB149D800E5A3EB /* RTCConnectionWrapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,8 @@
 		FABB4C731AB1278D00E5A3EB /* ChatWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatWindowViewController.m; sourceTree = "<group>"; };
 		FABB4C781AB13F4D00E5A3EB /* RTCService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCService.h; sourceTree = "<group>"; };
 		FABB4C791AB13F4D00E5A3EB /* RTCService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCService.m; sourceTree = "<group>"; };
+		FABB4C7B1AB149D800E5A3EB /* RTCConnectionWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCConnectionWrapper.h; sourceTree = "<group>"; };
+		FABB4C7C1AB149D800E5A3EB /* RTCConnectionWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RTCConnectionWrapper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				FABB4C731AB1278D00E5A3EB /* ChatWindowViewController.m */,
 				FABB4C781AB13F4D00E5A3EB /* RTCService.h */,
 				FABB4C791AB13F4D00E5A3EB /* RTCService.m */,
+				FABB4C7B1AB149D800E5A3EB /* RTCConnectionWrapper.h */,
+				FABB4C7C1AB149D800E5A3EB /* RTCConnectionWrapper.m */,
 			);
 			path = webRTCLocalChat;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				FABB4C7A1AB13F4D00E5A3EB /* RTCService.m in Sources */,
 				FABB4C521AB125B200E5A3EB /* AppDelegate.m in Sources */,
 				FABB4C4F1AB125B200E5A3EB /* main.m in Sources */,
+				FABB4C7D1AB149D800E5A3EB /* RTCConnectionWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

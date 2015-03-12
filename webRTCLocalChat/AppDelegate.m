@@ -19,6 +19,8 @@
     ChatWindowViewController* chat1 = [[ChatWindowViewController alloc] initWithService:_rtcService name:@"chat1"];
     ChatWindowViewController* chat2 = [[ChatWindowViewController alloc] initWithService:_rtcService name:@"chat2"];
     
+    [chat1.peerConnection connectTo:chat2.peerConnection];
+    
     UITabBarController* tabController = [[UITabBarController alloc] init];
     tabController.viewControllers = @[chat1,chat2];
     

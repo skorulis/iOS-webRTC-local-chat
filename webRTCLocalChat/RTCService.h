@@ -3,9 +3,10 @@
 
 @import Foundation;
 #import <RTCPeerConnectionFactory.h>
+#import "RTCConnectionWrapper.h"
 
 @interface RTCService : NSObject
 
-- (RTCPeerConnection*) getConnection:(id<RTCPeerConnectionDelegate>)delegate;
+- (RTCConnectionWrapper*) getConnection;
 
 @end

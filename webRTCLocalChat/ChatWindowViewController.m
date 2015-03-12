@@ -5,16 +5,15 @@
 #import <Masonry/Masonry.h>
 #import <FontAwesomeKit/FontAwesomeKit.h>
 #import "UIViewController+KeyboardAnimation.h"
-#import <RTCPeerConnectionDelegate.h>
+#import <RTCDataChannel.h>
 
 
-@interface ChatWindowViewController () <RTCPeerConnectionDelegate> {
-    NSString* _windowName;
+@interface ChatWindowViewController () < RTCDataChannelDelegate,RTCConnectionWrapperDelegate> {
     UILabel* _titleLabel;
     UITextView* _chatText;
     UIButton* _sendButton;
     RTCService* _service;
-    RTCPeerConnection* _peerConnection;
+    RTCDataChannel* _dataChannel;
 }
 
 @property (nonatomic, readonly) MASConstraint* entryBottomConstraint;
@@ -27,16 +26,16 @@
 - (instancetype) initWithService:(RTCService*)service name:(NSString*)name {
     self = [super init];
     self.title = name;
-    _windowName = name;
     _service = service;
-    _peerConnection = [_service getConnection:self];
+    _peerConnection = [_service getConnection];
+    _peerConnection.delegate = self;
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _titleLabel = [[UILabel alloc] init];
-    _titleLabel.text = _windowName;
+    _titleLabel.text = self.title;
     _titleLabel.font = [UIFont boldSystemFontOfSize:30];
     
     _chatText = [[UITextView alloc] init];
@@ -108,51 +107,44 @@
     if(toSend.length == 0) {
         return;
     }
-    _chatText.text = [NSString stringWithFormat:@"%@%@:%@\n",_chatText.text,self.title,toSend];
+    [self appendText:toSend name:self.title];
     _entryText.text = nil;
+    NSData* data = [toSend dataUsingEncoding:NSUTF8StringEncoding];
+    RTCDataBuffer* buffer = [[RTCDataBuffer alloc] initWithData:data isBinary:true];
+    [_peerConnection.dataChannel sendData:buffer];
+}
+
+- (void) appendText:(NSString*)text name:(NSString*)name {
+    _chatText.text = [NSString stringWithFormat:@"%@%@:%@\n",_chatText.text,name,text];
+}
+
+#pragma mark RTCConnectionWrapperDelegate
+
+- (void) rtcConnection:(RTCConnectionWrapper*)connection didCreateDataChannel:(RTCDataChannel*)dataChannel {
+    dataChannel.delegate = self;
+}
+
+#pragma mark RTCDataChannelDelegate
+
+// Called when the data channel state has changed.
+- (void)channelDidChangeState:(RTCDataChannel*)channel {
+    NSLog(@"state change %@",channel);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if(channel.state == kRTCDataChannelStateOpen) {
+            [self appendText:@"connected" name:@"system"];
+        }
+    });
     
 }
 
-#pragma mark RTCPeerConnectionDelegate
-
-// Triggered when the SignalingState changed.
-- (void)peerConnection:(RTCPeerConnection *)peerConnection signalingStateChanged:(RTCSignalingState)stateChanged {
-    NSLog(@"State changed %u",stateChanged);
+// Called when a data buffer was successfully received.
+- (void)channel:(RTCDataChannel*)channel didReceiveMessageWithBuffer:(RTCDataBuffer*)buffer {
+    NSLog(@"Get buffer %@",buffer);
+    NSString* s = [[NSString alloc] initWithData:buffer.data encoding:NSUTF8StringEncoding];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self appendText:s name:@"TEST"];
+    });
 }
 
-// Triggered when media is received on a new stream from remote peer.
-- (void)peerConnection:(RTCPeerConnection *)peerConnection addedStream:(RTCMediaStream *)stream {
-    NSLog(@"Added stream %@",stream);
-}
-
-// Triggered when a remote peer close a stream.
-- (void)peerConnection:(RTCPeerConnection *)peerConnection removedStream:(RTCMediaStream *)stream {
-    NSLog(@"Removed stream %@",stream);
-}
-
-// Triggered when renegotiation is needed, for example the ICE has restarted.
-- (void)peerConnectionOnRenegotiationNeeded:(RTCPeerConnection *)peerConnection {
-    NSLog(@"Reneg needed %@",peerConnection);
-}
-
-// Called any time the ICEConnectionState changes.
-- (void)peerConnection:(RTCPeerConnection *)peerConnection iceConnectionChanged:(RTCICEConnectionState)newState {
-    NSLog(@"Ice connection changed %u",newState);
-}
-
-// Called any time the ICEGatheringState changes.
-- (void)peerConnection:(RTCPeerConnection *)peerConnection iceGatheringChanged:(RTCICEGatheringState)newState {
-    NSLog(@"ice gathering changed %u",newState);
-}
-
-// New Ice candidate have been found.
-- (void)peerConnection:(RTCPeerConnection *)peerConnection gotICECandidate:(RTCICECandidate *)candidate {
-    NSLog(@"Got ice %@",candidate);
-}
-
-// New data channel has been opened.
-- (void)peerConnection:(RTCPeerConnection*)peerConnection didOpenDataChannel:(RTCDataChannel*)dataChannel {
-    NSLog(@"Did open channel %@",dataChannel);
-}
 
 @end

@@ -6,6 +6,8 @@
 #import <RTCMediaConstraints.h>
 #import <RTCPair.h>
 
+#import <RTCDataChannel.h>
+
 @interface RTCService () {
     RTCPeerConnectionFactory* _factory;
 }
@@ -21,10 +23,12 @@
     return self;
 }
 
-- (RTCPeerConnection*) getConnection:(id<RTCPeerConnectionDelegate>)delegate {
+- (RTCConnectionWrapper*) getConnection {
     RTCPair* pair = [[RTCPair alloc] initWithKey:@"RtpDataChannels" value:@"true"];
     RTCMediaConstraints* constraints = [[RTCMediaConstraints alloc] initWithMandatoryConstraints:nil optionalConstraints:@[pair]];
-    return [_factory peerConnectionWithICEServers:nil constraints:constraints delegate:delegate];
+    RTCConnectionWrapper* wrapper = [[RTCConnectionWrapper alloc] init];
+    wrapper.peerConnection = [_factory peerConnectionWithICEServers:nil constraints:constraints delegate:wrapper];
+    return wrapper;
 }
 
 @end
