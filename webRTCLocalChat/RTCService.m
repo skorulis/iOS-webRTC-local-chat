@@ -24,7 +24,7 @@
 }
 
 - (RTCConnectionWrapper*) getConnection {
-    RTCPair* pair = [[RTCPair alloc] initWithKey:@"RtpDataChannels" value:@"true"];
+    RTCPair* pair = [[RTCPair alloc] initWithKey:@"DtlsSrtpKeyAgreement" value:@"true"];
     RTCMediaConstraints* constraints = [[RTCMediaConstraints alloc] initWithMandatoryConstraints:nil optionalConstraints:@[pair]];
     RTCConnectionWrapper* wrapper = [[RTCConnectionWrapper alloc] init];
     wrapper.peerConnection = [_factory peerConnectionWithICEServers:nil constraints:constraints delegate:wrapper];

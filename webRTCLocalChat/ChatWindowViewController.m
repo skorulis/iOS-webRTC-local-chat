@@ -110,7 +110,7 @@
     [self appendText:toSend name:self.title];
     _entryText.text = nil;
     NSData* data = [toSend dataUsingEncoding:NSUTF8StringEncoding];
-    RTCDataBuffer* buffer = [[RTCDataBuffer alloc] initWithData:data isBinary:false];
+    RTCDataBuffer* buffer = [[RTCDataBuffer alloc] initWithData:data isBinary:true];
     [_peerConnection.dataChannel sendData:buffer];
 }
 
@@ -134,7 +134,6 @@
             [self appendText:@"connected" name:@"system"];
         }
     });
-    
 }
 
 // Called when a data buffer was successfully received.
