@@ -16,15 +16,18 @@ PODS:
     - FontAwesomeKit/Core
   - libjingle_peerconnection (8638.2.0)
   - Masonry (0.6.1)
+  - UIViewController+KeyboardAnimation (1.2)
 
 DEPENDENCIES:
   - FontAwesomeKit
   - libjingle_peerconnection
   - Masonry
+  - UIViewController+KeyboardAnimation (~> 1.2)
 
 SPEC CHECKSUMS:
   FontAwesomeKit: 61f0b4f12f1b11b7489bc7d1507a8692547f3857
   libjingle_peerconnection: e0d5fa484fc833549ef0e35dd42134607991f52a
   Masonry: 2cb49fd14d203d2db5ca6bb017135b235dde9980
+  UIViewController+KeyboardAnimation: edf4c870e8a7cf24281173cdb061337bf2188cff
 
 COCOAPODS: 0.35.0
