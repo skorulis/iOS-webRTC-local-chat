@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FABB4C4F1AB125B200E5A3EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB4C4E1AB125B200E5A3EB /* main.m */; };
+		FABB4C521AB125B200E5A3EB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB4C511AB125B200E5A3EB /* AppDelegate.m */; };
+		FABB4C551AB125B200E5A3EB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB4C541AB125B200E5A3EB /* ViewController.m */; };
+		FABB4C581AB125B200E5A3EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB4C561AB125B200E5A3EB /* Main.storyboard */; };
+		FABB4C5A1AB125B200E5A3EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABB4C591AB125B200E5A3EB /* Images.xcassets */; };
+		FABB4C5D1AB125B200E5A3EB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABB4C5B1AB125B200E5A3EB /* LaunchScreen.xib */; };
+		FABB4C691AB125B200E5A3EB /* webRTCLocalChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FABB4C681AB125B200E5A3EB /* webRTCLocalChatTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FABB4C631AB125B200E5A3EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FABB4C411AB125B100E5A3EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FABB4C481AB125B200E5A3EB;
+			remoteInfo = webRTCLocalChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FABB4C491AB125B200E5A3EB /* webRTCLocalChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webRTCLocalChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABB4C4D1AB125B200E5A3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABB4C4E1AB125B200E5A3EB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FABB4C501AB125B200E5A3EB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FABB4C511AB125B200E5A3EB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FABB4C531AB125B200E5A3EB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FABB4C541AB125B200E5A3EB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FABB4C571AB125B200E5A3EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FABB4C591AB125B200E5A3EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FABB4C5C1AB125B200E5A3EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FABB4C621AB125B200E5A3EB /* webRTCLocalChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = webRTCLocalChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABB4C671AB125B200E5A3EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABB4C681AB125B200E5A3EB /* webRTCLocalChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = webRTCLocalChatTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FABB4C461AB125B200E5A3EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABB4C5F1AB125B200E5A3EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FABB4C401AB125B100E5A3EB = {
+			isa = PBXGroup;
+			children = (
+				FABB4C4B1AB125B200E5A3EB /* webRTCLocalChat */,
+				FABB4C651AB125B200E5A3EB /* webRTCLocalChatTests */,
+				FABB4C4A1AB125B200E5A3EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FABB4C4A1AB125B200E5A3EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FABB4C491AB125B200E5A3EB /* webRTCLocalChat.app */,
+				FABB4C621AB125B200E5A3EB /* webRTCLocalChatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FABB4C4B1AB125B200E5A3EB /* webRTCLocalChat */ = {
+			isa = PBXGroup;
+			children = (
+				FABB4C501AB125B200E5A3EB /* AppDelegate.h */,
+				FABB4C511AB125B200E5A3EB /* AppDelegate.m */,
+				FABB4C531AB125B200E5A3EB /* ViewController.h */,
+				FABB4C541AB125B200E5A3EB /* ViewController.m */,
+				FABB4C561AB125B200E5A3EB /* Main.storyboard */,
+				FABB4C591AB125B200E5A3EB /* Images.xcassets */,
+				FABB4C5B1AB125B200E5A3EB /* LaunchScreen.xib */,
+				FABB4C4C1AB125B200E5A3EB /* Supporting Files */,
+			);
+			path = webRTCLocalChat;
+			sourceTree = "<group>";
+		};
+		FABB4C4C1AB125B200E5A3EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FABB4C4D1AB125B200E5A3EB /* Info.plist */,
+				FABB4C4E1AB125B200E5A3EB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FABB4C651AB125B200E5A3EB /* webRTCLocalChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				FABB4C681AB125B200E5A3EB /* webRTCLocalChatTests.m */,
+				FABB4C661AB125B200E5A3EB /* Supporting Files */,
+			);
+			path = webRTCLocalChatTests;
+			sourceTree = "<group>";
+		};
+		FABB4C661AB125B200E5A3EB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FABB4C671AB125B200E5A3EB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FABB4C481AB125B200E5A3EB /* webRTCLocalChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABB4C6C1AB125B200E5A3EB /* Build configuration list for PBXNativeTarget "webRTCLocalChat" */;
+			buildPhases = (
+				FABB4C451AB125B200E5A3EB /* Sources */,
+				FABB4C461AB125B200E5A3EB /* Frameworks */,
+				FABB4C471AB125B200E5A3EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = webRTCLocalChat;
+			productName = webRTCLocalChat;
+			productReference = FABB4C491AB125B200E5A3EB /* webRTCLocalChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FABB4C611AB125B200E5A3EB /* webRTCLocalChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABB4C6F1AB125B200E5A3EB /* Build configuration list for PBXNativeTarget "webRTCLocalChatTests" */;
+			buildPhases = (
+				FABB4C5E1AB125B200E5A3EB /* Sources */,
+				FABB4C5F1AB125B200E5A3EB /* Frameworks */,
+				FABB4C601AB125B200E5A3EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FABB4C641AB125B200E5A3EB /* PBXTargetDependency */,
+			);
+			name = webRTCLocalChatTests;
+			productName = webRTCLocalChatTests;
+			productReference = FABB4C621AB125B200E5A3EB /* webRTCLocalChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FABB4C411AB125B100E5A3EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = com.skorulis;
+				TargetAttributes = {
+					FABB4C481AB125B200E5A3EB = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					FABB4C611AB125B200E5A3EB = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = FABB4C481AB125B200E5A3EB;
+					};
+				};
+			};
+			buildConfigurationList = FABB4C441AB125B100E5A3EB /* Build configuration list for PBXProject "webRTCLocalChat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FABB4C401AB125B100E5A3EB;
+			productRefGroup = FABB4C4A1AB125B200E5A3EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FABB4C481AB125B200E5A3EB /* webRTCLocalChat */,
+				FABB4C611AB125B200E5A3EB /* webRTCLocalChatTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FABB4C471AB125B200E5A3EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABB4C581AB125B200E5A3EB /* Main.storyboard in Resources */,
+				FABB4C5D1AB125B200E5A3EB /* LaunchScreen.xib in Resources */,
+				FABB4C5A1AB125B200E5A3EB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABB4C601AB125B200E5A3EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FABB4C451AB125B200E5A3EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABB4C551AB125B200E5A3EB /* ViewController.m in Sources */,
+				FABB4C521AB125B200E5A3EB /* AppDelegate.m in Sources */,
+				FABB4C4F1AB125B200E5A3EB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABB4C5E1AB125B200E5A3EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABB4C691AB125B200E5A3EB /* webRTCLocalChatTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FABB4C641AB125B200E5A3EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FABB4C481AB125B200E5A3EB /* webRTCLocalChat */;
+			targetProxy = FABB4C631AB125B200E5A3EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FABB4C561AB125B200E5A3EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FABB4C571AB125B200E5A3EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FABB4C5B1AB125B200E5A3EB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FABB4C5C1AB125B200E5A3EB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FABB4C6A1AB125B200E5A3EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FABB4C6B1AB125B200E5A3EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FABB4C6D1AB125B200E5A3EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = webRTCLocalChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FABB4C6E1AB125B200E5A3EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = webRTCLocalChat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FABB4C701AB125B200E5A3EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = webRTCLocalChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/webRTCLocalChat.app/webRTCLocalChat";
+			};
+			name = Debug;
+		};
+		FABB4C711AB125B200E5A3EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = webRTCLocalChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/webRTCLocalChat.app/webRTCLocalChat";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FABB4C441AB125B100E5A3EB /* Build configuration list for PBXProject "webRTCLocalChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABB4C6A1AB125B200E5A3EB /* Debug */,
+				FABB4C6B1AB125B200E5A3EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FABB4C6C1AB125B200E5A3EB /* Build configuration list for PBXNativeTarget "webRTCLocalChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABB4C6D1AB125B200E5A3EB /* Debug */,
+				FABB4C6E1AB125B200E5A3EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FABB4C6F1AB125B200E5A3EB /* Build configuration list for PBXNativeTarget "webRTCLocalChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABB4C701AB125B200E5A3EB /* Debug */,
+				FABB4C711AB125B200E5A3EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FABB4C411AB125B100E5A3EB /* Project object */;
+}
